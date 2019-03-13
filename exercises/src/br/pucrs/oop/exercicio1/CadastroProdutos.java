@@ -1,4 +1,4 @@
-package br.pucrs.exercicio1;
+package br.pucrs.oop.exercicio1;
 
 import java.util.ArrayList;
 import java.util.List;

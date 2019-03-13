@@ -1,4 +1,4 @@
-package br.pucrs.exercicio1;
+package br.pucrs.oop.exercicio1;
 
 public class ItemVenda {
 
