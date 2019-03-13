@@ -3,7 +3,6 @@ package br.pucrs.oop.exercicio1.model;
 public class Produto {
 
     // == fields ==
-    private int id;
     private String nome;
     private int codigo;
     private double preco;
@@ -16,14 +15,6 @@ public class Produto {
     }
 
     // == public methods ==
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -61,5 +52,14 @@ public class Produto {
     @Override
     public int hashCode() {
         return codigo;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", codigo=" + codigo +
+                ", preco=" + preco +
+                '}';
     }
 }
