@@ -1,4 +1,4 @@
-package br.pucrs.exercicio2;
+package br.pucrs.oop.exercicio2;
 
 import java.util.*;
 
