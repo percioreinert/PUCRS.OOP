@@ -1,4 +1,4 @@
-package br.pucrs.oop.exercicio1;
+package br.pucrs.oop.exercicio1.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
