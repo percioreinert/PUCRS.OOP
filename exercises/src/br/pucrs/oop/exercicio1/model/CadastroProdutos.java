@@ -1,4 +1,6 @@
-package br.pucrs.oop.exercicio1;
+package br.pucrs.oop.exercicio1.model;
+
+import br.pucrs.oop.exercicio1.service.CadastroProdutosService;
 
 public class CadastroProdutos {
 

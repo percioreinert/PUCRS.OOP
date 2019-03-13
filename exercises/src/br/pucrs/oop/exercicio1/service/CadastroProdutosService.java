@@ -1,4 +1,6 @@
-package br.pucrs.oop.exercicio1;
+package br.pucrs.oop.exercicio1.service;
+
+import br.pucrs.oop.exercicio1.model.Produto;
 
 import java.util.ArrayList;
 import java.util.Collections;
