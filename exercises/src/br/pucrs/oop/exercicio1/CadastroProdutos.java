@@ -1,20 +1,29 @@
 package br.pucrs.oop.exercicio1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CadastroProdutos {
 
     // == fields ==
-    private List<Produto> lista;
+    private CadastroProdutosService service;
 
     // == constructors ==
     public CadastroProdutos() {
-        lista = new ArrayList<>();
+        service = new CadastroProdutosService();
     }
 
     // == public methods ==
     public void add(Produto produto) {
-        lista.add(produto);
+        service.addProduto(produto);
+    }
+
+    public void remove(int codigo) {
+        service.removeProduto(codigo);
+    }
+
+    public void update(Produto produto) {
+        service.updateProduto(produto);
+    }
+
+    public Produto getProduto(int codigo) {
+        return service.getProduto(codigo);
     }
 }

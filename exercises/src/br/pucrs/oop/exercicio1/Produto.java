@@ -3,6 +3,7 @@ package br.pucrs.oop.exercicio1;
 public class Produto {
 
     // == fields ==
+    private int id;
     private String nome;
     private int codigo;
     private double preco;
@@ -15,6 +16,14 @@ public class Produto {
     }
 
     // == public methods ==
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -37,5 +46,20 @@ public class Produto {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Produto)) return false;
+
+        Produto produto = (Produto) o;
+
+        return codigo == produto.codigo;
+    }
+
+    @Override
+    public int hashCode() {
+        return codigo;
     }
 }

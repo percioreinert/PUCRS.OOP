@@ -1,20 +1,29 @@
 package br.pucrs.oop.exercicio1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CadastroClientes {
 
     // == fields ==
-    private List<Cliente> lista;
+    private CadastroClientesService service;
 
     // == constructors ==
     public CadastroClientes() {
-        lista = new ArrayList<>();
+        service = new CadastroClientesService();
     }
 
     // == public methods ==
     public void add(Cliente cliente) {
-        lista.add(cliente);
+        service.addCliente(cliente);
+    }
+
+    public void remove(int id) {
+        service.removeCliente(id);
+    }
+
+    public void update(Cliente cliente) {
+        service.updateCliente(cliente);
+    }
+
+    public Cliente getCliente(String cpf) {
+        return service.getCliente(cpf);
     }
 }
