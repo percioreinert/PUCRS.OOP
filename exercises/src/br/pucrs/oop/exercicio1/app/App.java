@@ -1,15 +1,16 @@
 package br.pucrs.oop.exercicio1.app;
 
 import br.pucrs.oop.exercicio1.model.*;
+import br.pucrs.oop.exercicio1.util.NomesProduto;
 
 import java.util.Scanner;
 
 public class App {
 
     // == static fields ==
+    private static Scanner scanner = new Scanner(System.in);
     private static CadastroClientes clientes = new CadastroClientes();
     private static CadastroProdutos produtos = new CadastroProdutos();
-    private static Scanner scanner = new Scanner(System.in);
     private static Venda venda;
 
     // == main method ==
@@ -49,7 +50,7 @@ public class App {
         nome = scanner.nextLine();
         Cliente toAdd = new Cliente(cpf, nome);
 
-        clientes.add(toAdd);
+        clientes.addCliente(toAdd);
     }
 
     private static void cadastrarProduto() {
@@ -66,11 +67,12 @@ public class App {
         preco = scanner.nextDouble();
         Produto toAdd = new Produto(nome, codigo, preco);
 
-        produtos.add(toAdd);
+        produtos.addProduto(toAdd);
     }
 
     private static void venda() {
         String choice, cpf;
+        int codigo, quantidade, escolha = 1;
 
         System.out.println("== VENDA ==");
         System.out.println("Quer adicionar o cpf? S/N");
@@ -84,7 +86,15 @@ public class App {
             venda = new Venda();
         }
 
-        System.out.println("Adicione um produto");
+        do {
+
+            System.out.println("Digite o código do produto:");
+            codigo = scanner.nextInt();
+            System.out.println("Digite a quantidade");
+            quantidade = scanner.nextInt();
+
+            venda.addItemVenda(new ItemVenda(quantidade, produtos.getProduto(codigo)));
+        } while (escolha > 0 && escolha < 2);
 
         // TODO: Finish this implementation.
     }

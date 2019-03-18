@@ -1,31 +1,57 @@
 package br.pucrs.oop.exercicio1.model;
 
-import br.pucrs.oop.exercicio1.service.CadastroProdutosService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
 public class CadastroProdutos {
 
     // == fields ==
-    private CadastroProdutosService service;
+    private List<Produto> list;
 
     // == constructors ==
     public CadastroProdutos() {
-        service = new CadastroProdutosService();
+        list = new ArrayList<>();
     }
 
     // == public methods ==
-    public void add(Produto produto) {
-        service.addProduto(produto);
+    public void addProduto(Produto toAdd) {
+        list.add(toAdd);
     }
 
-    public void remove(int codigo) {
-        service.removeProduto(codigo);
+    public void removeProduto(int codigo) {
+        ListIterator<Produto> iterator = list.listIterator();
+
+        while (iterator.hasNext()) {
+            Produto produto = iterator.next();
+
+            if (produto.getCodigo() == codigo) {
+                iterator.remove();
+                break;
+            }
+        }
     }
 
-    public void update(Produto produto) {
-        service.updateProduto(produto);
+    public void updateProduto(Produto toUpdate) {
+        ListIterator<Produto> iterator = list.listIterator();
+
+        while (iterator.hasNext()) {
+            Produto produto = iterator.next();
+
+            if (produto.equals(toUpdate)) {
+                iterator.set(toUpdate);
+                break;
+            }
+        }
     }
 
     public Produto getProduto(int codigo) {
-        return service.getProduto(codigo);
+        for (Produto produto : list) {
+            if (produto.getCodigo() == codigo) {
+                return produto;
+            }
+        }
+        return null;
     }
 }
