@@ -52,4 +52,19 @@ public class ItemVenda {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("== ITEM ==");
+        builder.append("Quantidade: ");
+        builder.append(this.quantidade);
+        builder.append("\nProduto: ");
+        builder.append(this.produto.toString());
+
+        return builder.toString();
+    }
+
+    public double getTotal() {
+        return this.produto.getPreco() * this.quantidade;
+    }
 }
