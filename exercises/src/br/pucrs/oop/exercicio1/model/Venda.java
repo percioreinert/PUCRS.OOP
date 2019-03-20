@@ -35,6 +35,9 @@ public class Venda {
     }
 
     // == public methods ==
+    public List<ItemVenda> getItems() {
+        return Collections.unmodifiableList(list);
+    }
     public LocalDate getData() {
         return data;
     }
@@ -102,5 +105,17 @@ public class Venda {
             }
         }
         return null;
+    }
+
+    public double getTotal() {
+        ListIterator<ItemVenda> iterator = list.listIterator();
+        double total = 0;
+
+        while (iterator.hasNext()) {
+            ItemVenda item = iterator.next();
+
+            total += item.getTotal();
+        }
+        return total;
     }
 }
