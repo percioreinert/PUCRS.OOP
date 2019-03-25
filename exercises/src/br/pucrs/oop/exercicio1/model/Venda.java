@@ -35,31 +35,16 @@ public class Venda {
     }
 
     // == public methods ==
-    public List<ItemVenda> getItems() {
-        return Collections.unmodifiableList(list);
-    }
     public LocalDate getData() {
         return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
     }
 
     public int getNVenda() {
         return nVenda;
     }
 
-    public void setNVenda(int nVenda) {
-        this.nVenda = nVenda;
-    }
-
     public Cliente getCliente() {
         return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public List<ItemVenda> getList() {
@@ -117,5 +102,27 @@ public class Venda {
             total += item.getTotal();
         }
         return total;
+    }
+
+    public String emitirNotaFiscal() {
+        StringBuilder builder = new StringBuilder("== NOTA FISCAL ==\n\n");
+        builder.append("Data: ");
+        builder.append(getData());
+        builder.append("\n\nNº da venda:");
+        builder.append(getNVenda());
+        if (getCliente() != null) {
+            builder.append("\nCPF:");
+            builder.append(getCliente().getCpf());
+        }
+        builder.append("\n\nLista de Itens:");
+        for (ItemVenda item : list) {
+            builder.append(item.toString());
+            builder.append("\nTotal do Item:");
+            builder.append(item.getTotal());
+        }
+        builder.append("\n\nTotal da venda: ");
+        builder.append(getTotal());
+
+        return builder.toString();
     }
 }
