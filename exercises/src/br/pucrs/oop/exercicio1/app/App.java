@@ -33,7 +33,7 @@ public class App {
                     break;
                 case 3: venda();
                     break;
-                default:
+                case 0: System.exit(0);
                     break;
             }
         } while (choice < 0 || choice > 3);
@@ -94,10 +94,16 @@ public class App {
             quantidade = scanner.nextInt();
 
             venda.addItemVenda(new ItemVenda(quantidade, produtos.getProduto(codigo)));
-        } while (escolha > 0 && escolha < 2);
 
-        // TODO: Finish this implementation.
+            System.out.println("== LISTA DE ITENS ==");
+            for (ItemVenda item : venda.getList()) {
+                System.out.println(item);
+            }
+
+            System.out.println("Deseja adicionar outro produto?\n1 - Sim\n2 - Não");
+            escolha = scanner.nextInt();
+        } while (escolha != 1);
+
+        venda.emitirNotaFiscal();
     }
-
-    // TODO: Finish the implementation of the App.
 }
