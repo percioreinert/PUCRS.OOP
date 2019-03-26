@@ -1,7 +1,6 @@
 package br.pucrs.oop.exercicio1.app;
 
 import br.pucrs.oop.exercicio1.model.*;
-import br.pucrs.oop.exercicio1.util.NomesProduto;
 
 import java.util.Scanner;
 
@@ -11,7 +10,6 @@ public class App {
     private static Scanner scanner = new Scanner(System.in);
     private static CadastroClientes clientes = new CadastroClientes();
     private static CadastroProdutos produtos = new CadastroProdutos();
-    private static Venda venda;
 
     // == main method ==
     public static void main(String[] args) {
@@ -71,6 +69,7 @@ public class App {
     }
 
     private static void venda() {
+        Venda venda;
         String choice, cpf;
         int codigo, quantidade, escolha = 1;
 
