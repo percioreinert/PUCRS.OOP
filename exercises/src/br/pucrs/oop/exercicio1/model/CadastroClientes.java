@@ -1,8 +1,6 @@
 package br.pucrs.oop.exercicio1.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class CadastroClientes {
 
@@ -15,33 +13,11 @@ public class CadastroClientes {
     }
 
     // == public methods ==
+    public List<Cliente> getList() {
+        return Collections.unmodifiableList(list);
+    }
     public void addCliente(Cliente toAdd) {
         list.add(toAdd);
-    }
-
-    public void removeCliente(String cpf) {
-        ListIterator<Cliente> iterator = list.listIterator();
-
-        while (iterator.hasNext()) {
-            Cliente cliente = iterator.next();
-            if (cliente.getCpf().equals(cpf)) {
-                iterator.remove();
-                break;
-            }
-        }
-    }
-
-    public void updateCliente(Cliente toUpdate) {
-        ListIterator<Cliente> iterator = list.listIterator();
-
-        while (iterator.hasNext()) {
-            Cliente cliente = iterator.next();
-
-            if (cliente.equals(toUpdate)) {
-                iterator.set(toUpdate);
-                break;
-            }
-        }
     }
 
     public Cliente getCliente(String cpf) {

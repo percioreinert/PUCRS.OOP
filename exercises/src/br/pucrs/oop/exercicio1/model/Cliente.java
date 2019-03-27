@@ -45,4 +45,12 @@ public class Cliente {
     public int hashCode() {
         return cpf.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
 }

@@ -55,10 +55,10 @@ public class ItemVenda {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("== ITEM ==");
+        StringBuilder builder = new StringBuilder("- ITEM -\n\n");
         builder.append("Quantidade: ");
         builder.append(this.quantidade);
-        builder.append("\nProduto: ");
+        builder.append("\n");
         builder.append(this.produto.toString());
 
         return builder.toString();
