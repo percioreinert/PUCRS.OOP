@@ -20,9 +20,9 @@ public class CadastroClientes {
         list.add(toAdd);
     }
 
-    public Cliente getCliente(String cpf) {
+    public Cliente getCliente(String id) {
         for (Cliente cliente : list) {
-            if (cliente.getCpf().equals(cpf)) {
+            if (cliente.getId().equals(id)) {
                 return cliente;
             }
         }

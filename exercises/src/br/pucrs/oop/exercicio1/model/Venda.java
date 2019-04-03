@@ -112,7 +112,7 @@ public class Venda {
         builder.append(getNVenda());
         if (getCliente() != null) {
             builder.append("\nCPF:");
-            builder.append(getCliente().getCpf());
+            builder.append(getCliente().getCodigo());
         }
         builder.append("\n\nLista de Itens:");
         for (ItemVenda item : list) {

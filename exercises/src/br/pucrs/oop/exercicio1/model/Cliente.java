@@ -1,26 +1,28 @@
 package br.pucrs.oop.exercicio1.model;
 
-import java.util.Objects;
-
-public class Cliente {
+public abstract class Cliente {
 
     // == fields ==
-    private String cpf;
+    private String codigo;
     private String nome;
 
     // == constructors ==
-    public Cliente(String cpf, String nome) {
-        this.cpf = cpf;
+    Cliente(String codigo, String nome) {
+        this.codigo = codigo;
         this.nome = nome;
     }
 
     // == public methods ==
-    public String getCpf() {
-        return cpf;
+    public abstract String getId();
+
+    public abstract void setId(String id);
+
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -38,18 +40,18 @@ public class Cliente {
 
         Cliente cliente = (Cliente) o;
 
-        return cpf.equals(cliente.cpf);
+        return codigo.equals(cliente.codigo);
     }
 
     @Override
     public int hashCode() {
-        return cpf.hashCode();
+        return codigo.hashCode();
     }
 
     @Override
     public String toString() {
         return "Cliente{" +
-                "cpf='" + cpf + '\'' +
+                "codigo='" + codigo + '\'' +
                 ", nome='" + nome + '\'' +
                 '}';
     }

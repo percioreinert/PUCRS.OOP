@@ -11,9 +11,9 @@ public class App {
 
         // == Criação dos objetos ==
         System.out.println();
-        Cliente c1 = new Cliente("111", "João");
-        Cliente c2 = new Cliente("222", "Pedro");
-        Cliente c3 = new Cliente("333", "Maria");
+        Cliente c1 = new ClientePF("111", "João", "45643");
+        Cliente c2 = new ClientePJ("222", "Pedro", "23496");
+        Cliente c3 = new ClienteEstrangeiro("333", "Maria", "45856");
 
         Produto p1 = new Produto("Bolacha", 111, 1.99);
         Produto p2 = new Produto("Refrigerante", 222, 3.99);
